@@ -19,4 +19,8 @@ public class SceneController : MonoBehaviour
 	{
 		SceneManager.LoadScene("Main");//メインシーンへ遷移する
 	}
+	public void TransitPrivacyPolicyScene()
+	{
+		SceneManager.LoadScene("PrivacyPolicy");
+	}
 }

@@ -1,9 +1,10 @@
 Android
 PlayerPath?
-C:/work/MedalGame2/MedalGame2.apk
+C:/work/MedalGame2/MedalGame2.aab
 SceneListBegin?
 Assets/Scenes/Title.unity
 Assets/Scenes/Main.unity
+Assets/Scenes/PrivacyPolicy.unity
 SceneListEnd?
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown

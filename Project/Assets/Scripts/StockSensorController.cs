@@ -46,7 +46,7 @@ public class StockSensorController : MonoBehaviour
 		//Debug.DrawRay(PosStartRay, PosEndRay, Color.red, LENGTH_RAY);
 		if(Physics.Raycast(PosStartRay,PosEndRay, out hittedObjectInfo, LENGTH_RAY))//Rayはオブジェクトの中心から出る
 		{
-			if(hittedObjectInfo.collider.gameObject.name == UNSENSORED_BALL)
+			if(hittedObjectInfo.collider.gameObject.name != SENSORED_BALL)
 			{
 				rayResult = true;//検知結果を上書き
 				hittedObjectInfo.collider.gameObject.name = SENSORED_BALL;//オブジェクト名を検知済みに上書き

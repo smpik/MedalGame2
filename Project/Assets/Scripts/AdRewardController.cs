@@ -115,6 +115,7 @@ public class AdRewardController : MonoBehaviour
 		Debug.Log("HandleRewardedAdRewarded event received for " + amount.ToString() + " " + type);
 
 		DisplayControllerInstance.InactivateGameOverCanvas();//ゲームオーバーキャンバスを非表示にする
+		DisplayControllerInstance.ActivateBanner1();//バナーを復活させる(リワードを与えたとき以外はどうせもう何もできないからバナーを復活させる箇所はここだけでいい)
 		giveReward();//リワードを与える処理をコール
 	}
 	private void giveReward()

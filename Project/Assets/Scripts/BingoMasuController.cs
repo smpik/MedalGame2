@@ -87,6 +87,7 @@ public class BingoMasuController : MonoBehaviour
 
 	private PayoutManager PayoutManagerInstance;
 	private CreditManager CreditManagerInstance;
+	private BallGenerator BallGeneratorInstance;
 	/*==============================================================================*/
 	/* 初期化処理																		*/
 	/*==============================================================================*/
@@ -104,6 +105,7 @@ public class BingoMasuController : MonoBehaviour
 
 		PayoutManagerInstance = GameObject.Find("Main Camera").GetComponent<PayoutManager>();
 		CreditManagerInstance = GameObject.Find("Main Camera").GetComponent<CreditManager>();
+		BallGeneratorInstance = GameObject.Find("BallEntrance").GetComponent<BallGenerator>();
 	}
 	private void generateStructInstance()
 	{
@@ -433,6 +435,7 @@ public class BingoMasuController : MonoBehaviour
 		if (isNotifyStockExist == false)//通知のストックがなければ
 		{
 			CreditManagerInstance.NotifyBingoActionIsFinished();//アクションが一通り終わったことを通知する
+			BallGeneratorInstance.PermitGenerate();//ボール生成を許可する
 		}
 	}
 	private void updateBingoTable()

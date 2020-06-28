@@ -9,9 +9,11 @@ public class DisplayController : MonoBehaviour
 	private Text PayoutValueText;
 	private GameObject GameOverCanvas;
 	private GameObject ContinueButton;
+	private GameObject Banner1;
 
 	private CreditManager CreditManagerInstance;
 	private PayoutManager PayoutManagerInstance;
+	private AdBannerController AdBannerControllerInstance;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +22,11 @@ public class DisplayController : MonoBehaviour
 		PayoutValueText = GameObject.Find("PayoutValueText").GetComponent<Text>();
 		GameOverCanvas = GameObject.Find("GameOverCanvas");
 		ContinueButton = GameObject.Find("ContinueButton");
+		Banner1 = GameObject.Find("Banner1");
 
 		CreditManagerInstance = GameObject.Find("Main Camera").GetComponent<CreditManager>();
 		PayoutManagerInstance = GameObject.Find("Main Camera").GetComponent<PayoutManager>();
+		AdBannerControllerInstance = GameObject.Find("Banner1").GetComponent<AdBannerController>();
 
 		CreditManagerInstance.InitCreditText();
 		PayoutManagerInstance.InitPayoutText();
@@ -52,5 +56,14 @@ public class DisplayController : MonoBehaviour
 	public void InactivateContinueButton()
 	{
 		ContinueButton.SetActive(false);
+	}
+	public void InactivateBanner1()
+	{
+		Banner1.SetActive(false);//バナーを非表示にする
+	}
+	public void ActivateBanner1()
+	{
+		Banner1.SetActive(true);//バナーを表示する
+		AdBannerControllerInstance.ReDispBanner();//バナーを有効化する
 	}
 }

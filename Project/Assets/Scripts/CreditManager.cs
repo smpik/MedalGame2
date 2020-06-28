@@ -10,10 +10,13 @@ public class CreditManager : MonoBehaviour
 
 	private DisplayController DisplayControllerInstance;
 	private PayoutManager PayoutManagerInstance;
+	private AdBannerController AdBannerControllerInstance;
 
     // Start is called before the first frame update
     void Start()
     {
+		AdBannerControllerInstance = GameObject.Find("Banner1").GetComponent<AdBannerController>();
+
 		PayoutManagerInstance = GameObject.Find("Main Camera").GetComponent<PayoutManager>();
     }
 	
@@ -57,6 +60,7 @@ public class CreditManager : MonoBehaviour
 			if ( (IsCreditZero() == true) && (PayoutManagerInstance.GetPayout()<=0) )//クレジットなしも払い出しもなければ(=ゲームオーバーということ)
 			{
 				DisplayControllerInstance.ActivateGameOverCanvas();//ゲームオーバー画面表示要求
+				AdBannerControllerInstance.StopBanner();//バナーを消す(リジェクト対応のため)
 			}
 		}
 	}
